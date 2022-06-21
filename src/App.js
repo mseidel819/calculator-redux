@@ -55,10 +55,10 @@ function App() {
     setCalc(calc.slice(0, -2).concat(calc.slice(-1)));
   }
 
-  console.log(calc.slice(-1), calc.slice(-2, -1));
-  console.log(
-    operators.includes(calc.slice(-1)) && operators.includes(calc.slice(-2, -1))
-  );
+  // console.log(calc.slice(-1), calc.slice(-2, -1));
+  // console.log(
+  //   operators.includes(calc.slice(-1)) && operators.includes(calc.slice(-2, -1))
+  // );
 
   ////////////////////////////////////////////////////////////////////////////////////
   const clear = () => {
