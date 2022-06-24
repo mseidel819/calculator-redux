@@ -1,6 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import "./App.css";
+import { ThemeProvider, Container } from "@mui/material";
+
+import { darkThemeOptions } from "./themes/darkTheme.styles";
+import { StyledContainer } from "./App.styles";
+import Header from "./components/header/header.component";
 
 function App() {
   const [calc, setCalc] = useState("");
@@ -75,76 +79,81 @@ function App() {
 
   /////////////////////////////////////////////////////////////////
   return (
-    <div className="app">
-      <div className="calculator">
-        <div id="display" className="display">
-          {calc || 0}
-        </div>
-        <div className="operators">
-          <button name="/" id="divide" onClick={() => updateCalc("/")}>
-            /
-          </button>
-          <button name="*" id="multiply" onClick={() => updateCalc("*")}>
-            X
-          </button>
-          <button name="+" id="add" onClick={() => updateCalc("+")}>
-            +
-          </button>
-          <button name="-" id="subtract" onClick={() => updateCalc("-")}>
-            -
-          </button>
+    <ThemeProvider theme={darkThemeOptions}>
+      <StyledContainer>
+        <Container maxWidth="sm">
+          <Header />
+          <div className="calculator">
+            <div id="display" className="display">
+              {calc || 0}
+            </div>
+            <div className="operators">
+              <button name="/" id="divide" onClick={() => updateCalc("/")}>
+                /
+              </button>
+              <button name="*" id="multiply" onClick={() => updateCalc("*")}>
+                X
+              </button>
+              <button name="+" id="add" onClick={() => updateCalc("+")}>
+                +
+              </button>
+              <button name="-" id="subtract" onClick={() => updateCalc("-")}>
+                -
+              </button>
 
-          <button id="delete" onClick={backSpace}>
-            DEL
-          </button>
-          <button id="clear" onClick={clear}>
-            AC
-          </button>
-        </div>
-        <div className="numbers">
-          <button name="1" id="one" onClick={() => updateCalc("1")}>
-            1
-          </button>
-          <button name="2" id="two" onClick={() => updateCalc("2")}>
-            2
-          </button>
-          <button name="3" id="three" onClick={() => updateCalc("3")}>
-            3
-          </button>
-          <button name="4" id="four" onClick={() => updateCalc("4")}>
-            4
-          </button>
-          <button name="5" id="five" onClick={() => updateCalc("5")}>
-            5
-          </button>
-          <button name="6" id="six" onClick={() => updateCalc("6")}>
-            6
-          </button>
-          <button name="7" id="seven" onClick={() => updateCalc("7")}>
-            7
-          </button>
-          <button name="8" id="eight" onClick={() => updateCalc("8")}>
-            8
-          </button>
-          <button name="9" id="nine" onClick={() => updateCalc("9")}>
-            9
-          </button>
-          <button
-            name="0"
-            id="zero"
-            onClick={calc ? () => updateCalc("0") : clear}
-          >
-            0
-          </button>
-          <button name="." id="decimal" onClick={() => updateCalc(".")}>
-            .
-          </button>
-          <button name="=" id="equals" onClick={calculate}>
-            =
-          </button>
-        </div>
-      </div>
-    </div>
+              <button id="delete" onClick={backSpace}>
+                DEL
+              </button>
+              <button id="clear" onClick={clear}>
+                AC
+              </button>
+            </div>
+            <div className="numbers">
+              <button name="1" id="one" onClick={() => updateCalc("1")}>
+                1
+              </button>
+              <button name="2" id="two" onClick={() => updateCalc("2")}>
+                2
+              </button>
+              <button name="3" id="three" onClick={() => updateCalc("3")}>
+                3
+              </button>
+              <button name="4" id="four" onClick={() => updateCalc("4")}>
+                4
+              </button>
+              <button name="5" id="five" onClick={() => updateCalc("5")}>
+                5
+              </button>
+              <button name="6" id="six" onClick={() => updateCalc("6")}>
+                6
+              </button>
+              <button name="7" id="seven" onClick={() => updateCalc("7")}>
+                7
+              </button>
+              <button name="8" id="eight" onClick={() => updateCalc("8")}>
+                8
+              </button>
+              <button name="9" id="nine" onClick={() => updateCalc("9")}>
+                9
+              </button>
+              <button
+                name="0"
+                id="zero"
+                onClick={calc ? () => updateCalc("0") : clear}
+              >
+                0
+              </button>
+              <button name="." id="decimal" onClick={() => updateCalc(".")}>
+                .
+              </button>
+              <button name="=" id="equals" onClick={calculate}>
+                =
+              </button>
+            </div>
+          </div>
+        </Container>
+      </StyledContainer>
+    </ThemeProvider>
   );
 }
 
