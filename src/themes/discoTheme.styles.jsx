@@ -23,7 +23,7 @@ export const discoThemeOptions = createTheme({
       disabled: "rgba(254,254,254,0.8)",
     },
     info: {
-      main: "#181f33",
+      main: "#1E0936",
     },
     error: {
       main: "#00ded0",

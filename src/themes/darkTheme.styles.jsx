@@ -39,9 +39,9 @@ export const darkThemeOptions = createTheme({
       lineHeight: 0.92,
     },
     h2: {
-      fontSize: 41,
+      fontSize: 40,
       fontWeight: 700,
-      lineHeight: 0.83,
+      lineHeight: "36.8px",
     },
     h3: {
       fontSize: 28,
@@ -61,7 +61,7 @@ export const darkThemeOptions = createTheme({
     button: {
       fontSize: 40,
       fontWeight: 700,
-      lineHeight: 1.32,
+      lineHeight: "36.8px",
     },
     body2: {
       fontWeight: 700,

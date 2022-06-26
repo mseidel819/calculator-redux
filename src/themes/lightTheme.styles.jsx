@@ -23,7 +23,7 @@ export const lightThemeOptions = createTheme({
       disabled: "rgba(254,254,254,0.8)",
     },
     info: {
-      main: "#181f33",
+      main: "#EEEEEE",
     },
     error: {
       main: "#c85402",

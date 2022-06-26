@@ -4,13 +4,14 @@ import { createAction } from "../../reducer.utils";
 //////
 //not finished. or started really
 ///////
-const updateCalc = (value) => {
+const updateCalcFunction = (value, calc) => {
+  const operators = ["+", "-", "/", "*"];
+  const deci = ["."];
   try {
     if (operators.includes(value) && calc === "" && value !== "-") return;
 
     if (deci.includes(value) && calc === "") {
-      setCalc(0 + value);
-      return;
+      return 0 + value;
     }
 
     if (
@@ -21,8 +22,7 @@ const updateCalc = (value) => {
     ) {
       const valup = calc.slice(0, -1);
 
-      setCalc(valup + value);
-      return;
+      return valup + value;
     }
 
     if (value === "-" && value === calc.slice(-1)) return;
@@ -32,16 +32,22 @@ const updateCalc = (value) => {
     // }
 
     ////////////////////////////////////////////////////////////////////////////////
-    setCalc(calc + value);
-    if (!operators.includes(value)) {
-      setResult(eval(calc + value).toString());
-    }
+    return calc + value;
+
+    // if (!operators.includes(value)) {
+    //   setResult(eval(calc + value).toString());
+    // }
   } catch (error) {
-    setCalc(calc);
-    return;
+    return calc;
   }
 };
 
+export const updateCalc = (value, calc) => {
+  const updated = updateCalcFunction(value, calc);
+  return createAction(CALC_ACTION_TYPES.SET_CALC, updated);
+};
+
+////whats this then??
 if (
   operators.includes(calc.slice(-1)) &&
   operators.includes(calc.slice(-2, -1)) &&
@@ -51,17 +57,27 @@ if (
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
-const clear = () => {
-  setCalc("");
-};
+// const clear = () => {
+//   setCalc("");
+// };
 ////////////////////////////////////////////////////////////////////////////////////
 
-const backSpace = () => {
+const backSpaceFunction = (calc) => {
   if (calc === "") return;
-  setCalc(calc.slice(0, -1));
+  return calc.slice(0, -1);
+};
+
+export const backSpace = (calc) => {
+  const backed = backSpaceFunction(calc);
+  return createAction(CALC_ACTION_TYPES.SET_CALC, backed);
 };
 ////////////////////////////////////////////////////////////////////////////////////
 
-const calculate = () => {
-  setCalc(eval(calc).toString());
+const calculateFunction = (calc) => {
+  return eval(calc).toString();
+};
+
+export const calculate = (calc) => {
+  const calculated = calculateFunction(calc);
+  return createAction(CALC_ACTION_TYPES.SET_CALC, calculated);
 };
