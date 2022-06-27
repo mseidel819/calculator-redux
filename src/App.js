@@ -33,7 +33,7 @@ function App() {
           <AnswerBar />
           <Keypad />
         </StyledMiniContainer>
-        <footer class="attribution">
+        <footer>
           Challenge by &nbsp;
           <a
             href="https://www.frontendmentor.io?ref=challenge"

@@ -2,11 +2,11 @@ import { CALC_ACTION_TYPES } from "./calc.types";
 import { createAction } from "../../reducer.utils";
 
 //////
-//not finished. or started really
 ///////
+const operators = ["+", "-", "/", "*"];
+const deci = ["."];
+
 const updateCalcFunction = (value, calc) => {
-  const operators = ["+", "-", "/", "*"];
-  const deci = ["."];
   try {
     if (operators.includes(value) && calc === "" && value !== "-") return;
 
@@ -27,16 +27,18 @@ const updateCalcFunction = (value, calc) => {
 
     if (value === "-" && value === calc.slice(-1)) return;
 
-    // if (calc[-1] == calc[-2]) {
-    //   setCalc(calc.slice(0, -2));
+    // if (calc[-1] === calc[-2]) {
+    //   calc = calc.slice(0, -2);
     // }
-
+    if (
+      operators.includes(calc.slice(-1)) &&
+      operators.includes(calc.slice(-2, -1)) &&
+      calc.slice(-1) !== "-"
+    ) {
+      calc = calc.slice(0, -2).concat(calc.slice(-1));
+    }
     ////////////////////////////////////////////////////////////////////////////////
     return calc + value;
-
-    // if (!operators.includes(value)) {
-    //   setResult(eval(calc + value).toString());
-    // }
   } catch (error) {
     return calc;
   }
@@ -44,22 +46,23 @@ const updateCalcFunction = (value, calc) => {
 
 export const updateCalc = (value, calc) => {
   const updated = updateCalcFunction(value, calc);
+
   return createAction(CALC_ACTION_TYPES.SET_CALC, updated);
 };
 
 ////whats this then??
-if (
-  operators.includes(calc.slice(-1)) &&
-  operators.includes(calc.slice(-2, -1)) &&
-  calc.slice(-1) !== "-"
-) {
-  setCalc(calc.slice(0, -2).concat(calc.slice(-1)));
-}
+// if (
+//   operators.includes(calc.slice(-1)) &&
+//   operators.includes(calc.slice(-2, -1)) &&
+//   calc.slice(-1) !== "-"
+// ) {
+//   setCalc(calc.slice(0, -2).concat(calc.slice(-1)));
+// }
 
 ////////////////////////////////////////////////////////////////////////////////////
-// const clear = () => {
-//   setCalc("");
-// };
+export const clear = () => {
+  return createAction(CALC_ACTION_TYPES.SET_CALC, "");
+};
 ////////////////////////////////////////////////////////////////////////////////////
 
 const backSpaceFunction = (calc) => {
@@ -74,6 +77,7 @@ export const backSpace = (calc) => {
 ////////////////////////////////////////////////////////////////////////////////////
 
 const calculateFunction = (calc) => {
+  console.log(calc);
   return eval(calc).toString();
 };
 
