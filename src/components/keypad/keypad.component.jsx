@@ -38,7 +38,9 @@ const Keypad = () => {
           </KeypadButton>
         </Grid>
         <Grid item xs={3}>
-          <KeypadButtonSecondary onClick={backSpace}>DEL</KeypadButtonSecondary>
+          <KeypadButtonSecondary onClick={() => dispatch(backSpace(calc))}>
+            DEL
+          </KeypadButtonSecondary>
         </Grid>
         <Grid item xs={3}>
           <KeypadButton onClick={() => dispatch(updateCalc("4", calc))}>

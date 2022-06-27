@@ -8,7 +8,8 @@ const deci = ["."];
 
 const updateCalcFunction = (value, calc) => {
   try {
-    if (operators.includes(value) && calc === "" && value !== "-") return;
+    if (operators.includes(value) && calc === "" && value !== "-")
+      return (calc = "");
 
     if (deci.includes(value) && calc === "") {
       return 0 + value;
@@ -25,11 +26,8 @@ const updateCalcFunction = (value, calc) => {
       return valup + value;
     }
 
-    if (value === "-" && value === calc.slice(-1)) return;
+    if (value === "-" && value === calc.slice(-1)) return calc;
 
-    // if (calc[-1] === calc[-2]) {
-    //   calc = calc.slice(0, -2);
-    // }
     if (
       operators.includes(calc.slice(-1)) &&
       operators.includes(calc.slice(-2, -1)) &&
@@ -50,15 +48,6 @@ export const updateCalc = (value, calc) => {
   return createAction(CALC_ACTION_TYPES.SET_CALC, updated);
 };
 
-////whats this then??
-// if (
-//   operators.includes(calc.slice(-1)) &&
-//   operators.includes(calc.slice(-2, -1)) &&
-//   calc.slice(-1) !== "-"
-// ) {
-//   setCalc(calc.slice(0, -2).concat(calc.slice(-1)));
-// }
-
 ////////////////////////////////////////////////////////////////////////////////////
 export const clear = () => {
   return createAction(CALC_ACTION_TYPES.SET_CALC, "");
@@ -66,12 +55,13 @@ export const clear = () => {
 ////////////////////////////////////////////////////////////////////////////////////
 
 const backSpaceFunction = (calc) => {
-  if (calc === "") return;
+  console.log(calc);
+  if (!calc) return (calc = "");
   return calc.slice(0, -1);
 };
 
-export const backSpace = (calc) => {
-  const backed = backSpaceFunction(calc);
+export const backSpace = (calc = "") => {
+  let backed = backSpaceFunction(calc);
   return createAction(CALC_ACTION_TYPES.SET_CALC, backed);
 };
 ////////////////////////////////////////////////////////////////////////////////////
