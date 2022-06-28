@@ -1,8 +1,14 @@
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../../store/theme-setter/theme.action";
+import { selectTheme } from "../../store/theme-setter/theme.selector";
 import { Grid, Typography, IconButton } from "@mui/material";
 import { ThemeSlider } from "./header.styles";
 import CircleIcon from "@mui/icons-material/Circle";
 
-const Header = ({ themeToggler }) => {
+const Header = () => {
+  const dispatch = useDispatch();
+  const { themeSet } = useSelector(selectTheme);
+
   return (
     <Grid
       container
@@ -34,7 +40,7 @@ const Header = ({ themeToggler }) => {
             </div>
             <div className="slider-box">
               <IconButton
-                onClick={themeToggler}
+                onClick={() => dispatch(toggleTheme(themeSet))}
                 className="slider-button"
                 aria-label="toggle-button"
               >

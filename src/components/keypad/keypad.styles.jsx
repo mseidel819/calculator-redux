@@ -13,7 +13,6 @@ export const KeypadButton = styled(Button)(({ theme }) => ({
   },
 
   "@media (max-width: 570px)": {
-    // width: "90%",
     padding: "19px 21px",
     fontSize: "32px",
   },

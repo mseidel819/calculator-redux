@@ -14,7 +14,7 @@ export const StyledMiniContainer = styled("div")(({ theme }) => ({
   padding: "75px",
   "@media (max-width: 570px)": {
     width: "330px",
-    padding: "75px 5px",
+    padding: "45px 5px",
   },
 }));
 

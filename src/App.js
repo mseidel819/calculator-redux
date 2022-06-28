@@ -1,5 +1,7 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectTheme } from "./store/theme-setter/theme.selector";
 import { ThemeProvider } from "@mui/material";
 
 import { darkThemeOptions } from "./themes/darkTheme.styles";
@@ -15,12 +17,13 @@ import AnswerBar from "./components/answer-bar/answer-bar.component";
 import Keypad from "./components/keypad/keypad.component";
 
 function App() {
-  const [themeSet, setThemeSet] = useState(0);
+  // const [themeSet, setThemeSet] = useState(0);
 
-  const themeToggler = () => {
-    if (themeSet === 2) return setThemeSet(0);
-    return setThemeSet(themeSet + 1);
-  };
+  // const themeToggler = () => {
+  //   if (themeSet === 2) return setThemeSet(0);
+  //   return setThemeSet(themeSet + 1);
+  // };
+  const { themeSet } = useSelector(selectTheme);
 
   const themeArr = [darkThemeOptions, lightThemeOptions, discoThemeOptions];
 
@@ -29,7 +32,7 @@ function App() {
     <ThemeProvider theme={themeArr[themeSet]}>
       <StyledContainer>
         <StyledMiniContainer role="main">
-          <Header themeToggler={themeToggler} />
+          <Header />
           <AnswerBar />
           <Keypad />
         </StyledMiniContainer>

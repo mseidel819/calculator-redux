@@ -10,13 +10,11 @@ export const ThemeSlider = styled("div")(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
     gap: "23%",
-    // margin: "0 5px",
     width: "75px",
   },
   ".slider-box": {
     display: "flex",
     alignItems: "center",
-    // justifyContent: "center",
     justifyContent:
       theme.palette.type === "dark"
         ? "start"
@@ -33,7 +31,6 @@ export const ThemeSlider = styled("div")(({ theme }) => ({
     margin: "5px",
     height: "16px",
     width: "16px",
-    // backgroundColor: theme.palette.error.main,
     color: theme.palette.error.main,
   },
 
