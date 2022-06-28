@@ -29,6 +29,7 @@ export const darkThemeOptions = createTheme({
     },
     info: {
       main: "#181f33",
+      light: "#EEEEEE",
     },
   },
   typography: {

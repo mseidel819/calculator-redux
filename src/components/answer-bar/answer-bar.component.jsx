@@ -8,7 +8,11 @@ const AnswerBar = () => {
 
   return (
     <StyledAnswerCard>
-      <Typography variant="h2" color="primary" sx={{ paddingTop: "5px" }}>
+      <Typography
+        variant="h2"
+        color="text.secondary"
+        sx={{ paddingTop: "5px" }}
+      >
         {calc ? calc : 0}
       </Typography>
     </StyledAnswerCard>

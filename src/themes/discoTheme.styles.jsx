@@ -18,12 +18,13 @@ export const discoThemeOptions = createTheme({
       default: "#17062a",
     },
     text: {
-      secondary: "#ffffff",
+      secondary: "#ffe53d",
       primary: "#ffe53d",
       disabled: "rgba(254,254,254,0.8)",
     },
     info: {
       main: "#1E0936",
+      light: "#1A2327",
     },
     error: {
       main: "#00ded0",
@@ -39,9 +40,9 @@ export const discoThemeOptions = createTheme({
       lineHeight: 0.92,
     },
     h2: {
-      fontSize: 41,
+      fontSize: 40,
       fontWeight: 700,
-      lineHeight: 0.83,
+      lineHeight: "36.8px",
     },
     h3: {
       fontSize: 28,
@@ -61,7 +62,7 @@ export const discoThemeOptions = createTheme({
     button: {
       fontSize: 40,
       fontWeight: 700,
-      lineHeight: 1.32,
+      lineHeight: "36.8px",
     },
     body2: {
       fontWeight: 700,

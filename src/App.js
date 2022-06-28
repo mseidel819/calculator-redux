@@ -3,6 +3,8 @@ import React from "react";
 import { ThemeProvider } from "@mui/material";
 
 import { darkThemeOptions } from "./themes/darkTheme.styles";
+import { lightThemeOptions } from "./themes/lightTheme.styles";
+import { discoThemeOptions } from "./themes/discoTheme.styles";
 import { StyledContainer, StyledMiniContainer } from "./App.styles";
 import Header from "./components/header/header.component";
 import AnswerBar from "./components/answer-bar/answer-bar.component";

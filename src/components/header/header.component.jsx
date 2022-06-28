@@ -10,24 +10,24 @@ const Header = () => {
       sx={{ marginBottom: "32px" }}
     >
       <Grid item xs={6}>
-        <Typography variant="h1" color="primary">
+        <Typography variant="h1" color="text.secondary">
           calc
         </Typography>
       </Grid>
       <Grid item container xs={6} justifyContent="end">
         <ThemeSlider>
-          <Typography variant="body1" color="primary">
+          <Typography variant="body1" color="text.secondary">
             THEME
           </Typography>
           <div>
             <div className="slider-numbers">
-              <Typography variant="body1" color="primary">
+              <Typography variant="body1" color="text.secondary">
                 1
               </Typography>
-              <Typography variant="body1" color="primary">
+              <Typography variant="body1" color="text.secondary">
                 2
               </Typography>
-              <Typography variant="body1" color="primary">
+              <Typography variant="body1" color="text.secondary">
                 3
               </Typography>
             </div>

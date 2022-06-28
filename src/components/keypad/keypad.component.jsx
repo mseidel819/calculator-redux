@@ -20,7 +20,7 @@ const Keypad = () => {
   console.log(calc);
 
   return (
-    <Card sx={{ padding: "32px 30px" }}>
+    <Card sx={{ padding: "32px 30px", boxShadow: "none" }}>
       <Grid container spacing={{ sm: 3, xs: 2 }}>
         <Grid item xs={3}>
           <KeypadButton onClick={() => dispatch(updateCalc("7", calc))}>

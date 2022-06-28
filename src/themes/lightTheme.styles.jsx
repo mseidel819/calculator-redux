@@ -15,15 +15,16 @@ export const lightThemeOptions = createTheme({
     },
     background: {
       paper: "#D2CDCD",
-      default: "#f2f2f2",
+      default: "#E6E6E6",
     },
     text: {
-      secondary: "#ffffff",
+      secondary: "#36362C",
       primary: "#36362c",
       disabled: "rgba(254,254,254,0.8)",
     },
     info: {
       main: "#EEEEEE",
+      light: "#EEEEEE",
     },
     error: {
       main: "#c85402",
@@ -39,9 +40,9 @@ export const lightThemeOptions = createTheme({
       lineHeight: 0.92,
     },
     h2: {
-      fontSize: 41,
+      fontSize: 40,
       fontWeight: 700,
-      lineHeight: 0.83,
+      lineHeight: "36.8px",
     },
     h3: {
       fontSize: 28,
@@ -61,7 +62,7 @@ export const lightThemeOptions = createTheme({
     button: {
       fontSize: 40,
       fontWeight: 700,
-      lineHeight: 1.32,
+      lineHeight: "36.8px",
     },
     body2: {
       fontWeight: 700,

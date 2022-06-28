@@ -25,7 +25,7 @@ export const KeypadButtonSecondary = styled(Button)(({ theme }) => ({
 
   fontSize: "28px",
   backgroundColor: theme.palette.secondary.main,
-  color: theme.palette.text.secondary,
+  color: "#fff",
   boxShadow: `inset 0px -4px 0px ${theme.palette.secondary.dark}`,
 
   "&:hover": {
@@ -43,7 +43,7 @@ export const KeypadButtonTertiary = styled(Button)(({ theme }) => ({
   padding: "15px 40px",
   fontSize: "28px",
   backgroundColor: theme.palette.error.main,
-  color: theme.palette.text.secondary,
+  color: theme.palette.info.light,
   boxShadow: `inset 0px -4px 0px ${theme.palette.error.dark}`,
 
   "&:hover": {
