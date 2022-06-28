@@ -17,7 +17,6 @@ import { selectCalc } from "../../store/calc/calc.selector";
 const Keypad = () => {
   const { calc } = useSelector(selectCalc);
   const dispatch = useDispatch();
-  console.log(calc);
 
   return (
     <Card sx={{ padding: "32px 30px", boxShadow: "none" }}>

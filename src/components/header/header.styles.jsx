@@ -8,27 +8,41 @@ export const ThemeSlider = styled("div")(({ theme }) => ({
 
   ".slider-numbers": {
     display: "flex",
-    // justifyContent: "space-around",
     justifyContent: "center",
     gap: "23%",
     // margin: "0 5px",
-    width: "70px",
+    width: "75px",
   },
   ".slider-box": {
     display: "flex",
     alignItems: "center",
     // justifyContent: "center",
+    justifyContent:
+      theme.palette.type === "dark"
+        ? "start"
+        : theme.palette.type === "light"
+        ? "center"
+        : "end",
     borderRadius: "1000px",
     height: "26px",
-    width: "100%",
+    width: "75px",
     backgroundColor: theme.palette.background.paper,
   },
   ".slider-button": {
-    cursor: "pointer",
     borderRadius: "1000px",
     margin: "5px",
     height: "16px",
     width: "16px",
-    backgroundColor: theme.palette.error.main,
+    // backgroundColor: theme.palette.error.main,
+    color: theme.palette.error.main,
+  },
+
+  ".toggle-icon": {
+    borderRadius: "1000px",
+    height: "18px",
+    width: "18px",
+    "&:hover": {
+      color: theme.palette.error.light,
+    },
   },
 }));

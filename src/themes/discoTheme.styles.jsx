@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material";
 
 export const discoThemeOptions = createTheme({
   palette: {
-    type: "light",
+    type: "disco",
     primary: {
       main: "#331c4d",
       light: "#6c34ac",

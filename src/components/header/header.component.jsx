@@ -1,7 +1,8 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, IconButton } from "@mui/material";
 import { ThemeSlider } from "./header.styles";
+import CircleIcon from "@mui/icons-material/Circle";
 
-const Header = () => {
+const Header = ({ themeToggler }) => {
   return (
     <Grid
       container
@@ -32,7 +33,13 @@ const Header = () => {
               </Typography>
             </div>
             <div className="slider-box">
-              <div className="slider-button"></div>
+              <IconButton
+                onClick={themeToggler}
+                className="slider-button"
+                aria-label="toggle-button"
+              >
+                <CircleIcon className="toggle-icon" />
+              </IconButton>
             </div>
           </div>
         </ThemeSlider>

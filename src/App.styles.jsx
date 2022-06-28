@@ -17,3 +17,11 @@ export const StyledMiniContainer = styled("div")(({ theme }) => ({
     padding: "75px 5px",
   },
 }));
+
+export const StyledFooter = styled("footer")(({ theme }) => ({
+  color: theme.palette.text.secondary,
+
+  a: {
+    color: theme.palette.text.secondary,
+  },
+}));

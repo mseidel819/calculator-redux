@@ -1,41 +1,39 @@
 import React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import { ThemeProvider } from "@mui/material";
 
 import { darkThemeOptions } from "./themes/darkTheme.styles";
 import { lightThemeOptions } from "./themes/lightTheme.styles";
 import { discoThemeOptions } from "./themes/discoTheme.styles";
-import { StyledContainer, StyledMiniContainer } from "./App.styles";
+import {
+  StyledContainer,
+  StyledMiniContainer,
+  StyledFooter,
+} from "./App.styles";
 import Header from "./components/header/header.component";
 import AnswerBar from "./components/answer-bar/answer-bar.component";
 import Keypad from "./components/keypad/keypad.component";
 
 function App() {
-  // const [calc, setCalc] = useState("");
-  // const [result, setResult] = useState("");
+  const [themeSet, setThemeSet] = useState(0);
 
-  // const operators = ["+", "-", "/", "*"];
-  // const deci = ["."];
-  ///////////////////////////////////////////////////////////////////////////////////
+  const themeToggler = () => {
+    if (themeSet === 2) return setThemeSet(0);
+    return setThemeSet(themeSet + 1);
+  };
 
-  // if (
-  //   operators.includes(calc.slice(-1)) &&
-  //   operators.includes(calc.slice(-2, -1)) &&
-  //   calc.slice(-1) !== "-"
-  // ) {
-  //   setCalc(calc.slice(0, -2).concat(calc.slice(-1)));
-  // }
+  const themeArr = [darkThemeOptions, lightThemeOptions, discoThemeOptions];
 
   /////////////////////////////////////////////////////////////////
   return (
-    <ThemeProvider theme={darkThemeOptions}>
+    <ThemeProvider theme={themeArr[themeSet]}>
       <StyledContainer>
-        <StyledMiniContainer>
-          <Header />
+        <StyledMiniContainer role="main">
+          <Header themeToggler={themeToggler} />
           <AnswerBar />
           <Keypad />
         </StyledMiniContainer>
-        <footer>
+        <StyledFooter>
           Challenge by &nbsp;
           <a
             href="https://www.frontendmentor.io?ref=challenge"
@@ -49,7 +47,7 @@ function App() {
             Matt Seidel
           </a>
           .
-        </footer>
+        </StyledFooter>
       </StyledContainer>
     </ThemeProvider>
   );
