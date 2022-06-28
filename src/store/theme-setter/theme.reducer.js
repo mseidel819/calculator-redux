@@ -6,7 +6,6 @@ const INITIAL_STATE = {
 
 export const themeReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
-  //   console.log(payload);
 
   switch (type) {
     case THEME_ACTION_TYPES.SET_THEME:

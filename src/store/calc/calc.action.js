@@ -55,7 +55,6 @@ export const clear = () => {
 ////////////////////////////////////////////////////////////////////////////////////
 
 const backSpaceFunction = (calc) => {
-  console.log(calc);
   if (!calc) return (calc = "");
   return calc.slice(0, -1);
 };
@@ -67,7 +66,6 @@ export const backSpace = (calc = "") => {
 ////////////////////////////////////////////////////////////////////////////////////
 
 const calculateFunction = (calc) => {
-  console.log(calc);
   return eval(calc).toString();
 };
 
