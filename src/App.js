@@ -17,12 +17,6 @@ import AnswerBar from "./components/answer-bar/answer-bar.component";
 import Keypad from "./components/keypad/keypad.component";
 
 function App() {
-  // const [themeSet, setThemeSet] = useState(0);
-
-  // const themeToggler = () => {
-  //   if (themeSet === 2) return setThemeSet(0);
-  //   return setThemeSet(themeSet + 1);
-  // };
   const { themeSet } = useSelector(selectTheme);
 
   const themeArr = [darkThemeOptions, lightThemeOptions, discoThemeOptions];

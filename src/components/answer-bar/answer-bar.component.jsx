@@ -9,7 +9,7 @@ const AnswerBar = () => {
   return (
     <StyledAnswerCard>
       <Typography
-        variant="h2"
+        variant="h4"
         color="text.secondary"
         sx={{ paddingTop: "5px" }}
       >

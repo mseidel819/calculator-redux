@@ -6,4 +6,8 @@ export const StyledAnswerCard = styled(Card)(({ theme }) => ({
   marginBottom: "24px",
   boxShadow: "none",
   backgroundColor: theme.palette.info.main,
+
+  "@media (max-width: 570px)": {
+    padding: "12px",
+  },
 }));
