@@ -20,7 +20,7 @@ export const ThemeSlider = styled("div")(({ theme }) => ({
         ? "start"
         : theme.palette.type === "light"
         ? "center"
-        : "end",
+        : "flex-end",
     borderRadius: "1000px",
     height: "26px",
     width: "75px",
