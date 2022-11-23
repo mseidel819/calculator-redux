@@ -4,15 +4,24 @@ import storage from "redux-persist/lib/storage";
 import logger from "redux-logger";
 
 import { rootReducer } from "./root-reducer";
+import { Middleware } from "@reduxjs/toolkit";
+
+export type RootState = ReturnType<typeof rootReducer>;
+
+declare global {
+  interface Window {
+    __REDUX__DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
 
 const middleWares = [process.env.NODE_ENV === "development" && logger].filter(
-  Boolean
+  (middleware): middleware is Middleware => Boolean(middleware)
 );
 
 const composeEnhancer =
   (process.env.NODE_ENV !== "production" &&
     window &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+    window.__REDUX__DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;
 
 const persistConfig = {
