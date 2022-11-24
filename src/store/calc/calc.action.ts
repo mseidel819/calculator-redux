@@ -6,7 +6,7 @@ import { createAction } from "../../reducer.utils";
 const operators = ["+", "-", "/", "*"];
 const deci = ["."];
 
-const updateCalcFunction = (value, calc) => {
+const updateCalcFunction = (value: string, calc: string) => {
   try {
     if (operators.includes(value) && calc === "" && value !== "-")
       return (calc = "");
@@ -42,7 +42,7 @@ const updateCalcFunction = (value, calc) => {
   }
 };
 
-export const updateCalc = (value, calc) => {
+export const updateCalc = (value: string, calc: string) => {
   const updated = updateCalcFunction(value, calc);
 
   return createAction(CALC_ACTION_TYPES.SET_CALC, updated);
@@ -54,7 +54,7 @@ export const clear = () => {
 };
 ////////////////////////////////////////////////////////////////////////////////////
 
-const backSpaceFunction = (calc) => {
+const backSpaceFunction = (calc: string) => {
   if (!calc) return (calc = "");
   return calc.slice(0, -1);
 };
@@ -65,11 +65,11 @@ export const backSpace = (calc = "") => {
 };
 ////////////////////////////////////////////////////////////////////////////////////
 
-const calculateFunction = (calc) => {
+const calculateFunction = (calc: string) => {
   return eval(calc).toString();
 };
 
-export const calculate = (calc) => {
+export const calculate = (calc: string) => {
   const calculated = calculateFunction(calc);
   return createAction(CALC_ACTION_TYPES.SET_CALC, calculated);
 };

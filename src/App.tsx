@@ -1,5 +1,3 @@
-import React from "react";
-// import { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectTheme } from "./store/theme-setter/theme.selector";
 import { ThemeProvider } from "@mui/material";
@@ -16,12 +14,11 @@ import Header from "./components/header/header.component";
 import AnswerBar from "./components/answer-bar/answer-bar.component";
 import Keypad from "./components/keypad/keypad.component";
 
-function App() {
+const App = () => {
   const { themeSet } = useSelector(selectTheme);
 
   const themeArr = [darkThemeOptions, lightThemeOptions, discoThemeOptions];
 
-  /////////////////////////////////////////////////////////////////
   return (
     <ThemeProvider theme={themeArr[themeSet]}>
       <StyledContainer>
@@ -48,6 +45,6 @@ function App() {
       </StyledContainer>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

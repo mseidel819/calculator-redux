@@ -1,4 +1,6 @@
 import { styled } from "@mui/material";
+import { darkThemeOptions } from "../../themes/darkTheme.styles";
+import { lightThemeOptions } from "../../themes/lightTheme.styles";
 
 export const ThemeSlider = styled("div")(({ theme }) => ({
   width: "140px",
@@ -16,9 +18,9 @@ export const ThemeSlider = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent:
-      theme.palette.type === "dark"
+      theme === darkThemeOptions
         ? "start"
-        : theme.palette.type === "light"
+        : theme === lightThemeOptions
         ? "center"
         : "flex-end",
     borderRadius: "1000px",

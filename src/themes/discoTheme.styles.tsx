@@ -1,35 +1,34 @@
 import { createTheme } from "@mui/material";
 
-export const darkThemeOptions = createTheme({
+export const discoThemeOptions = createTheme({
   palette: {
-    type: "dark",
     primary: {
-      main: "#EAE3DC",
-      light: "#FFFFFF",
-      dark: "#B3A497",
+      main: "#331c4d",
+      light: "#6c34ac",
+      dark: "#881c9e",
     },
     secondary: {
-      main: "#647198",
-      light: "#A2B2E1",
-      dark: "#414E73",
-    },
-    error: {
-      main: "#D03F2F",
-      light: "#F96B5B",
-      dark: "#93261A",
+      main: "#56077c",
+      light: "#8631af",
+      dark: "#be15f4",
     },
     background: {
-      paper: "#242D44",
-      default: "#3a4663",
+      paper: "#1e0936",
+      default: "#17062a",
     },
     text: {
-      secondary: "#ffffff",
-      primary: "#434a59",
+      secondary: "#ffe53d",
+      primary: "#ffe53d",
       disabled: "rgba(254,254,254,0.8)",
     },
     info: {
-      main: "#181f33",
-      light: "#EEEEEE",
+      main: "#1E0936",
+      light: "#1A2327",
+    },
+    error: {
+      main: "#00ded0",
+      light: "#93fff8",
+      dark: "#6cf9f1",
     },
   },
   typography: {
